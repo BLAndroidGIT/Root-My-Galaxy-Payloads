@@ -176,7 +176,21 @@
       "kernelsu": {
         "url": "https://raw.githubusercontent.com/BuSung-dev/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e1s-S921NKSSFDZF3-kdp",
         "size": 4758872
+      },
+      {
+      "payloadId": "g0q-S906U1UES9GZB4",
+      "displayName": "Galaxy S22+ | Kernel 5.10.236",
+      "models": ["SM-S906U1", "SM-S906U"],
+      "kernelVersions": ["5.10.236"],
+      "exploit": {
+        "url": "https://raw.githubusercontent.com/BLAndroidGIT/Root-My-Galaxy-Payloads/main/artifacts/g0q-S906U1UES9GZB4/cve-2026-43499-app.so",
+        "size": 125984
+      },
+      "kernelsu": {
+        "url": "https://raw.githubusercontent.com/BLAndroidGIT/Root-My-Galaxy-Payloads/main/kernelsu/ksud-android12-5.10-S906U1UES9GZB4-kdp",
+        "size": 4758144
       }
+    },
     }
   ]
 }
