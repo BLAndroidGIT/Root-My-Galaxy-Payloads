@@ -176,7 +176,8 @@
       "kernelsu": {
         "url": "https://raw.githubusercontent.com/BuSung-dev/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e1s-S921NKSSFDZF3-kdp",
         "size": 4758872
-      },
+      }
+    },
       {
       "payloadId": "g0q-S906U1UES9GZB4",
       "displayName": "Galaxy S22+ | Kernel 5.10.236",
@@ -190,7 +191,6 @@
         "url": "https://raw.githubusercontent.com/BLAndroidGIT/Root-My-Galaxy-Payloads/main/kernelsu/ksud-android12-5.10-S906U1UES9GZB4-kdp",
         "size": 4758144
       }
-    },
     }
   ]
 }
