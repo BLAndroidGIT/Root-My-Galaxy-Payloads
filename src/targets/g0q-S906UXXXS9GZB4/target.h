@@ -348,7 +348,7 @@
  * mm
  * ========================================================================== */
 
-#define MM_STRUCT_SZ 0x3c0
+#define MM_STRUCT_SZ 960
 #define MM_ORDER 3
 #define KMALLOC_CGROUP_TYPE 0
 #define KMALLOC_CACHE_TYPES 2
