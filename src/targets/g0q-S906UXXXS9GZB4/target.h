@@ -348,8 +348,10 @@
  * mm
  * ========================================================================== */
 
-#define MM_STRUCT_SZ 0x3c0
-#define MM_ORDER 3
+#define MM_STRUCT_SZ       960    /* 0x3C0: v5.10 mm_struct slab size, was 0x500 */
+#define MM_CPU_PARTIAL     13      /* GDB: mm_cachep->cpu_partial on qemu v5.10 */
+#define KSNITCH_COLLISIONS 6
+
 #define KMALLOC_CGROUP_TYPE 0
 #define KMALLOC_CACHE_TYPES 2
 #define LEGACY_RT_MUTEX_WAITER 1
