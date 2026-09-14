@@ -342,7 +342,7 @@
 
 #define KMALLOC_CGROUP_TYPE 0
 #define KMALLOC_CACHE_TYPES 2
-// #define LEGACY_RT_MUTEX_WAITER 1
+#define LEGACY_RT_MUTEX_WAITER 1
 
 /* ============================================================================
  * Convenience macros
