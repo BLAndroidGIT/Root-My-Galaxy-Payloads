@@ -38,8 +38,24 @@
 #if defined(APP_PAYLOAD) && APP_PAYLOAD
 #define ROUTE_WAIT_SECONDS 8
 #define PSELECT_ENTER_DELAY_USEC 50000
-#define SLIDE_PSELECT_TIMEOUT_NSEC 100000000L
-#define SLIDE_KSNITCH_APPENDED_FUTEXES 2048
+#define SLIDE_PSELECT_TIMEOUT_NSEC 500000000L
+/* e1s/e2s (S24U 12GB, 真机验证) 同步护栏 — 防 requeue race panic:
+ * consumer 先确认 waiter 真阻塞在 pselect (wchan=do_select) 再触发 sched_setattr,
+ * 且 pselect 年龄不超过 150ms (避免在错误窗口触发导致 fake 树遍历崩溃) */
+#define SLIDE_SYNC_PSELECT_SYSCALL 1
+#define SLIDE_GUARD_PSELECT_SYSCALL 1
+#define SLIDE_PSELECT_READY_TIMEOUT_USEC 20000
+#define SLIDE_PSELECT_RECHECK_TIMEOUT_USEC 20000
+#define SLIDE_PSELECT_WCHAN_CONFIRMATIONS 3
+#define APP_PSELECT_POST_GUARD_AGE_CHECK 1
+#define APP_PSELECT_TRIGGER_MAX_AGE_USEC 150000
+/* 1024, not 2048: matches the device-verified root-UMH supervisor tuning
+ * (recipe §6: 4096->1024). 2048 also breaks F_SETPIPE_SZ under the
+ * unprivileged pipe-max-size cap on device. Note: the APP_PAYLOAD route
+ * itself is still unproven on q4q hardware (KernelSnitch-stage panic;
+ * see docs/SM-F9360-F9360ZCSAIZF1.md) — this value only aligns the app
+ * build with the proven supervisor configuration. */
+#define SLIDE_KSNITCH_APPENDED_FUTEXES 1024
 #define SLIDE_KSNITCH_REPEAT_MEASUREMENT 64
 #define SLIDE_KSNITCH_AVERAGE 8
 #define SLIDE_BANK_SLOTS 4
