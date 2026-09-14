@@ -55,7 +55,7 @@
  * itself is still unproven on q4q hardware (KernelSnitch-stage panic;
  * see docs/SM-F9360-F9360ZCSAIZF1.md) — this value only aligns the app
  * build with the proven supervisor configuration. */
-#define SLIDE_KSNITCH_APPENDED_FUTEXES 1024
+#define SLIDE_KSNITCH_APPENDED_FUTEXES 2048
 #define SLIDE_KSNITCH_REPEAT_MEASUREMENT 64
 #define SLIDE_KSNITCH_AVERAGE 8
 #define SLIDE_BANK_SLOTS 4
@@ -74,6 +74,8 @@
 #define P0_FINGERPRINT_HEADER \
   "targets/g0q-S906U1UES9GZB4/p0_fingerprint.h"
 #endif
+
+#define KERNELSNITCH_FUTEX_HASH_SIZE 2048
 
 #define KERNELSNITCH_IDENTITY_START 0xffffff8000000000ULL
 #define KERNELSNITCH_IDENTITY_END   0xffffff9000000000ULL
