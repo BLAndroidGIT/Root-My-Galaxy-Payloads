@@ -12,6 +12,7 @@
 #if defined(APP_PAYLOAD) && APP_PAYLOAD
 #define BUILD_VARIANT_LABEL "g0q-S906UXXXS9GZB4-app-physical-p0-oracle"
 #define APP_PHYS_P0_ORACLE 1
+#define APP_REQUIRE_FRESH_P0_SESSION 1
 #else
 #define BUILD_VARIANT_LABEL "g0q-S906UXXXS9GZB4-root-umh"
 #endif
@@ -148,29 +149,29 @@
  * Credentials
  * ========================================================================== */
 
-#define PREPARE_KERNEL_CRED_OFF 0x0012770cULL
-#define COMMIT_CREDS_OFF        0x00126414ULL
-#define OVERRIDE_CREDS_OFF      0x00126e88ULL
+// #define PREPARE_KERNEL_CRED_OFF 0x0012770cULL
+// #define COMMIT_CREDS_OFF        0x00126414ULL
+// #define OVERRIDE_CREDS_OFF      0x00126e88ULL
 
-#define CRED_USAGE_OFF       0x00  // Verified
+// #define CRED_USAGE_OFF       0x00  // Verified
 
-#define CRED_UID_OFF         0x04  // Verified
-#define CRED_GID_OFF         0x08  // Verified
-#define CRED_SUID_OFF        0x0c  // Verified
-#define CRED_SGID_OFF        0x10  // Verified
+// #define CRED_UID_OFF         0x04  // Verified
+// #define CRED_GID_OFF         0x08  // Verified
+// #define CRED_SUID_OFF        0x0c  // Verified
+// #define CRED_SGID_OFF        0x10  // Verified
 
-#define CRED_EUID_OFF        0x14  // Verified
-#define CRED_EGID_OFF        0x18  // Verified
-#define CRED_FSUID_OFF       0x1c  // Verified
-#define CRED_FSGID_OFF       0x20  // Verified
+// #define CRED_EUID_OFF        0x14  // Verified
+// #define CRED_EGID_OFF        0x18  // Verified
+// #define CRED_FSUID_OFF       0x1c  // Verified
+// #define CRED_FSGID_OFF       0x20  // Verified
 
-#define CRED_CAP_INHERITABLE_OFF 0x28  // Inferred
-#define CRED_CAP_PERMITTED_OFF   0x30  // Verified
-#define CRED_CAP_EFFECTIVE_OFF   0x38  // Verified
-#define CRED_CAP_BSET_OFF        0x40  // Inferred
-#define CRED_CAP_AMBIENT_OFF     0x48  // Inferred
-#define CRED_SECURITY_OFF        0x78  // Verified
-#define CRED_USER_NS_OFF         0x88  // Verified
+// #define CRED_CAP_INHERITABLE_OFF 0x28  // Inferred
+// #define CRED_CAP_PERMITTED_OFF   0x30  // Verified
+// #define CRED_CAP_EFFECTIVE_OFF   0x38  // Verified
+// #define CRED_CAP_BSET_OFF        0x40  // Inferred
+// #define CRED_CAP_AMBIENT_OFF     0x48  // Inferred
+// #define CRED_SECURITY_OFF        0x78  // Verified
+// #define CRED_USER_NS_OFF         0x88  // Verified
 
 /* ============================================================================
  * user_namespace
